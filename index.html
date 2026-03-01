@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Si Chang 10.7K Tactical Dashboard</title>
+    <title>Si Chang 10.7K FULL STRATEGY</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -17,109 +17,49 @@
             --zone5: #f44336;
         }
 
-        body {
-            font-family: 'Kanit', sans-serif;
-            background-color: var(--bg);
-            color: var(--secondary);
-            margin: 0;
-            padding: 10px;
-            line-height: 1.4;
-        }
-
-        .container {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            padding: 25px 15px;
-            background: linear-gradient(135deg, var(--secondary) 0%, #34495e 100%);
-            color: var(--white);
-            border-radius: 15px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-
+        body { font-family: 'Kanit', sans-serif; background-color: var(--bg); color: var(--secondary); margin: 0; padding: 10px; line-height: 1.4; }
+        .container { max-width: 500px; margin: 0 auto; }
+        
+        header { text-align: center; padding: 25px 15px; background: linear-gradient(135deg, var(--secondary) 0%, #34495e 100%); color: var(--white); border-radius: 15px; margin-bottom: 15px; }
         h1 { margin: 0; font-size: 20px; font-weight: 600; text-transform: uppercase; }
-        .subtitle { margin-top: 5px; font-size: 14px; opacity: 0.8; }
+        .subtitle { margin-top: 5px; font-size: 13px; opacity: 0.8; }
 
-        .btn-download {
-            display: block;
-            background: var(--accent);
-            color: var(--white);
-            text-decoration: none;
-            text-align: center;
-            padding: 12px;
-            border-radius: 10px;
-            font-weight: 600;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 10px rgba(0,188,212,0.3);
-        }
+        .btn-download { display: block; background: var(--accent); color: var(--white); text-decoration: none; text-align: center; padding: 12px; border-radius: 10px; font-weight: 600; margin-bottom: 15px; font-size: 14px; box-shadow: 0 4px 10px rgba(0,188,212,0.3); }
 
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
+        .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 15px; }
+        .stat-card { background: var(--white); padding: 12px; border-radius: 10px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.05); border-top: 3px solid var(--primary); }
+        .stat-card h3 { margin: 0; font-size: 10px; color: #7f8c8d; text-transform: uppercase; }
+        .stat-card p { margin: 3px 0 0; font-size: 16px; font-weight: 600; }
 
-        .stat-card {
-            background: var(--white);
-            padding: 15px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            border-top: 4px solid var(--primary);
-        }
+        .chart-card { background: var(--white); border-radius: 15px; padding: 15px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 15px; }
+        
+        /* Table Style */
+        .table-card { background: var(--white); border-radius: 15px; padding: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 15px; overflow: hidden; }
+        table { width: 100%; border-collapse: collapse; font-size: 13px; }
+        th { text-align: left; padding: 10px; background: #f8f9fa; border-bottom: 2px solid #eee; }
+        td { padding: 10px; border-bottom: 1px solid #f1f1f1; }
+        .day { font-weight: 600; color: var(--primary); width: 15%; }
+        .type { width: 30%; }
+        .badge { padding: 2px 6px; border-radius: 5px; font-size: 10px; font-weight: 600; color: white; display: inline-block; }
 
-        .stat-card h3 { margin: 0; font-size: 11px; color: #7f8c8d; text-transform: uppercase; }
-        .stat-card p { margin: 5px 0 0; font-size: 18px; font-weight: 600; }
+        .section-title { font-size: 16px; font-weight: 600; margin: 20px 0 10px; display: flex; align-items: center; }
+        .section-title::before { content: ""; width: 6px; height: 18px; background: var(--primary); margin-right: 10px; border-radius: 3px; }
 
-        .chart-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
+        .roadmap { display: flex; flex-direction: column; gap: 8px; }
+        .milestone { background: #fff; border-radius: 10px; padding: 12px; border-left: 5px solid var(--accent); box-shadow: 0 2px 5px rgba(0,0,0,0.03); }
+        .km-label { font-weight: 600; color: var(--accent); font-size: 14px; }
+        .milestone h4 { margin: 2px 0; font-size: 14px; }
+        .milestone p { margin: 0; font-size: 12px; color: #666; }
 
-        .section-title {
-            font-size: 16px;
-            font-weight: 600;
-            margin: 20px 0 10px;
-            display: flex;
-            align-items: center;
-        }
-
-        .section-title::before {
-            content: ""; width: 6px; height: 18px; background: var(--primary); margin-right: 10px; border-radius: 3px;
-        }
-
-        /* Tactical Roadmap for Mobile */
-        .roadmap { display: flex; flex-direction: column; gap: 10px; }
-        .milestone {
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            border-left: 5px solid var(--accent);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        }
-        .km-label { font-weight: 600; color: var(--accent); font-size: 16px; margin-bottom: 5px; display: block; }
-        .milestone h4 { margin: 0 0 5px; font-size: 15px; }
-        .milestone p { margin: 0; font-size: 13px; color: #666; }
-
-        .warning { border-left-color: var(--zone5); background: #fffcfc; }
-
-        footer { text-align: center; margin-top: 30px; padding-bottom: 20px; color: #999; font-size: 11px; }
+        footer { text-align: center; margin-top: 20px; padding-bottom: 20px; color: #999; font-size: 10px; }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>SI CHANG 10.7K TACTICAL</h1>
-        <p class="subtitle">แผนพิชิตเกาะสีชัง (Total Ascent 226m)</p>
+        <h1>SI CHANG 10.7K FULL PLAN</h1>
+        <p class="subtitle">แผนซ้อมและยุทธศาสตร์ฉบับสมบูรณ์ (GPX Data)</p>
     </header>
 
     <a href="https://drive.google.com/file/d/1W6M5qzmpm6FMiLuaTyRrKkvUKUACQ2gu/view?usp=drive_link" class="btn-download" target="_blank">
@@ -128,60 +68,71 @@
 
     <div class="dashboard-grid">
         <div class="stat-card"><h3>Distance</h3><p>10.72 km</p></div>
-        <div class="stat-card"><h3>Ascent</h3><p>226.4 m</p></div>
+        <div class="stat-card"><h3>Total Ascent</h3><p>226.4 m</p></div>
         <div class="stat-card"><h3>Max Elev.</h3><p>105.3 m</p></div>
         <div class="stat-card"><h3>Max HR</h3><p>193 BPM</p></div>
     </div>
 
-    <div class="section-title">โปรไฟล์ความชัน (Elevation)</div>
+    <div class="section-title">ตารางซ้อมรายสัปดาห์</div>
+    <div class="table-card">
+        <table>
+            <thead>
+                <tr>
+                    <th>วัน</th>
+                    <th>ประเภท</th>
+                    <th>เป้าหมาย</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="day">จ.</td><td class="type"><span class="badge" style="background:#7f8c8d">REST</span></td><td>พัก/นวดขา</td></tr>
+                <tr><td class="day">อ.</td><td class="type"><span class="badge" style="background:#e74c3c">SPEED</span></td><td>1km x 5 (Pace 7:15)</td></tr>
+                <tr><td class="day">พ.</td><td class="type"><span class="badge" style="background:#27ae60">EASY</span></td><td>6km (Z2 คุมนิ่งๆ)</td></tr>
+                <tr><td class="day">พฤ.</td><td class="type"><span class="badge" style="background:#f39c12">HILL</span></td><td>วิ่งขึ้นเนิน 90วินาที x 6</td></tr>
+                <tr><td class="day">ศ.</td><td class="type"><span class="badge" style="background:#7f8c8d">REST</span></td><td>พัก/ยืดเหยียด</td></tr>
+                <tr><td class="day">ส.</td><td class="type"><span class="badge" style="background:#2980b9">LONG</span></td><td>12km (ซ้อมเนิน)</td></tr>
+                <tr><td class="day">อา.</td><td class="type"><span class="badge" style="background:#8e44ad">RECOV</span></td><td>เดินเร็ว 45 นาที</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-title">กราฟความชัน (Elevation)</div>
     <div class="chart-card">
         <svg viewBox="0 0 500 150" style="width: 100%; height: auto; display: block;">
-            <defs>
-                <linearGradient id="grad" x1="0%" y1="0%" x2="0%" y2="100%">
-                    <stop offset="0%" style="stop-color:var(--primary);stop-opacity:0.5" />
-                    <stop offset="100%" style="stop-color:var(--primary);stop-opacity:0" />
-                </linearGradient>
-            </defs>
-            <path d="M 0 130 L 0 123 L 24 102 L 48 71 L 70 83 L 94 108 L 117 114 L 140 96 L 164 66 L 187 38 L 210 85 L 233 110 L 257 106 L 280 96 L 303 88 L 327 117 L 350 126 L 373 128 L 397 121 L 420 124 L 443 114 L 467 112 L 490 123 L 500 123 L 500 150 L 0 150 Z" fill="url(#grad)" />
-            <path d="M 0 123 L 24 102 L 48 71 L 70 83 L 94 108 L 117 114 L 140 96 L 164 66 L 187 38 L 210 85 L 233 110 L 257 106 L 280 96 L 303 88 L 327 117 L 350 126 L 373 128 L 397 121 L 420 124 L 443 114 L 467 112 L 490 123 L 500 123" fill="none" stroke="var(--primary)" stroke-width="2.5" />
-            
+            <path d="M 0 130 L 0 123 L 24 102 L 48 71 L 70 83 L 94 108 L 117 114 L 140 96 L 164 66 L 187 38 L 210 85 L 233 110 L 257 106 L 280 96 L 303 88 L 327 117 L 350 126 L 373 128 L 397 121 L 420 124 L 443 114 L 467 112 L 490 123 L 500 123 L 500 150 L 0 150 Z" fill="#ff572233" />
+            <path d="M 0 123 L 24 102 L 48 71 L 70 83 L 94 108 L 117 114 L 140 96 L 164 66 L 187 38 L 210 85 L 233 110 L 257 106 L 280 96 L 303 88 L 327 117 L 350 126 L 373 128 L 397 121 L 420 124 L 443 114 L 467 112 L 490 123 L 500 123" fill="none" stroke="#ff5722" stroke-width="2.5" />
             <text x="0" y="145" font-size="9" fill="#999">0k</text>
-            <text x="117" y="145" font-size="9" fill="#999">2.5k</text>
-            <text x="233" y="145" font-size="9" fill="#999">5k</text>
-            <text x="350" y="145" font-size="9" fill="#999">7.5k</text>
+            <text x="187" y="145" font-size="9" fill="#999">4.2k (Peak)</text>
             <text x="460" y="145" font-size="9" fill="#999">10.7k</text>
-            <circle cx="187" cy="38" r="3" fill="#f44336" />
-            <text x="175" y="30" font-size="8" font-weight="bold" fill="#f44336">PEAK 105m</text>
+            <text x="175" y="30" font-size="9" font-weight="bold" fill="#f44336">105m</text>
         </svg>
     </div>
 
-    <div class="section-title">ยุทธศาสตร์รายกิโลเมตร</div>
+    <div class="section-title">จุดสำคัญในสนาม</div>
     <div class="roadmap">
         <div class="milestone">
             <span class="km-label">กม. 0.5 - 1.5</span>
-            <h4>🧗 เนินเปิดตัว (+50m)</h4>
-            <p>ชันทันทีหลังออกตัว คุมสติให้อยู่ใน Zone 3 ห้ามสู้เนินจนหัวใจทะลุ</p>
+            <h4>🧗 เนินแรก (+50m)</h4>
+            <p>คุม HR ไม่เกิน 160 (Z3) ห้ามสู้จนหอบ</p>
         </div>
-        <div class="milestone warning">
+        <div class="milestone" style="border-left-color: #f44336; background: #fffcfc;">
             <span class="km-label">กม. 2.5 - 4.2</span>
-            <h4>🔥 เนินปราบเซียน (+90m)</h4>
-            <p>จุดพีกที่สุดของสนาม (105m) ซอยเท้าให้ถี่ที่สุด คุม HR ไม่เกิน 175 BPM</p>
+            <h4>🔥 จุดพีกชันสุด (+90m)</h4>
+            <p>สูงสุด 105m ซอยเท้ายิบ คุม HR ไม่เกิน 175</p>
         </div>
         <div class="milestone" style="border-left-color: #3498db;">
             <span class="km-label">กม. 4.2 - 5.5</span>
-            <h4>🎢 ทางดิ่งเก็บเวลา (-80m)</h4>
-            <p>ทางลงยาว ดึงเวลาคืนได้แต่อย่าลงส้นเท้าหนัก ลดหัวใจให้เร็วที่สุด</p>
+            <h4>🎢 ทางดิ่งดึงเวลา (-80m)</h4>
+            <p>ทางลงยาว ลดหัวใจลงให้เร็วที่สุด</p>
         </div>
         <div class="milestone">
             <span class="km-label">กม. 5.5 - 10.7</span>
-            <h4>🥊 เนินนวดต่อเนื่อง</h4>
-            <p>เนินลูกเล็กสลับขึ้นลงอีก 3-4 ลูก ประคอง Zone 4 จนเข้าเส้นชัย</p>
+            <h4>🥊 นวดต่อเนื่อง 3 ลูก</h4>
+            <p>เนินลูกเล็กสลับกัน ประคอง HR Z4 จนจบ</p>
         </div>
     </div>
 
     <footer>
-        Designed by Coach Gemini | สำหรับอายุ 32 ปี (Max HR 193)<br>
-        ข้อมูลอ้างอิงจากไฟล์ GPX เกาะสีชัง 2026
+        Designed by Coach Gemini | Age 32 (Max HR 193)
     </footer>
 </div>
 
